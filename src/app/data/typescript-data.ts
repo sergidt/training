@@ -104,3 +104,21 @@ export function Tagged<T extends Constructor<{}>>(Base: T) {
 export class Customer extends Tagged(Person) {
     accountBalance: number;
 }
+
+export interface Employee {
+    name: string,
+    age: number,
+    department: Department
+}
+
+export enum Department {
+    I_D,
+    SALES,
+    ADMINISTRATION
+}
+
+export function updateProperties<T, K extends keyof T>(value: T, props: Array<[K, any]>) {
+    let copy: T = Object.assign({}, value);
+    props.forEach(([k, v]: [K, any]) => copy[k] = v);
+    return copy;
+}
