@@ -1,0 +1,32 @@
+header {
+  padding:10px 10px 1px 10px;
+  margin-bottom: 2px;
+
+  img {
+    max-width: 300px;
+  }
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+
+  .tabs-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-right: solid 2px #FFCC00;
+  }
+
+  .components {
+    border-top: solid 2px #FFCC00;
+    height: 90vh;
+    width: 100%;
+    padding-left: 10px;
+  }
+}
