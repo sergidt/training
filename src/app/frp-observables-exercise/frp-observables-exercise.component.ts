@@ -39,14 +39,6 @@ export class FRPObservablesExerciseComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     console.clear();
-
-    Observable.fromEvent(this.input.nativeElement, 'keyup')
-              .debounceTime(300)
-              .map((ev: KeyboardEvent) => ev.target['value'])
-              .distinctUntilChanged()
-              .filter(_ => _.length)
-              .switchMap(_ => this.simulatedRequest(_))
-              .subscribe(_ => this.results.nativeElement.innerText = _);
   }
 
   simulatedRequest = (term: string) => Observable.timer(2000).map(_ => `Search result from -> ${term} request`);

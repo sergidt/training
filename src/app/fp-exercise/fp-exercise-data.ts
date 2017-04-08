@@ -29,32 +29,3 @@ export let devices = [
     new Camera('Camera4', CameraType.Fixed),
     new Camera('Camera4', CameraType.Fixed)
 ];
-
-export function totalMovableCameras(devices: Device[]): number {
-    let totalCameras = 0;
-    devices.forEach((e) => {
-        if (e.deviceType === DeviceType.Camera && !(<Camera>e).isFixed()) totalCameras++;
-    });
-    return totalCameras;
-}
-
-export type Predicate = (d: Device) => boolean;
-
-export function totalMovableCameras2(devices: Device[], conditions: Predicate[]): number {
-    let totalCameras = 0;
-    devices.forEach((d) => {
-        if (conditions.every(c => c(d))) totalCameras++;
-    });
-    return totalCameras;
-}
-
-//We can execute that function this way:
-const movable = totalMovableCameras2(devices, [(d) => d.deviceType === DeviceType.Camera, (d) => !(<Camera>d).isFixed()]);
-
-export function getDevicesCountByConditions(devices: Device[], conditions: Predicate[]): number {
-    let count= 0;
-    devices.forEach((d) => {
-        if (conditions.every(c => c(d))) count++;
-    });
-    return count;
-}

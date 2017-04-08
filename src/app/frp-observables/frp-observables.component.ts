@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MyPlugin, PluginManager, isPlugable } from '../data/typescript-data';
 import { Observable } from 'rxjs';
 
 @Component({
