@@ -16,8 +16,9 @@ import { FpExerciseComponent } from './fp-exercise/fp-exercise.component';
 import { FRPObservablesComponent } from './frp-observables/frp-observables.component';
 import { FRPObservablesExerciseComponent } from './frp-observables-exercise/frp-observables-exercise.component';
 import { FRPSubjectsComponent } from './frp-subjects/frp-subjects.component';
-import { FRPSubjectsExerciseComponent } from './frp-subjects-exercise/frp-subjects-exercise.component';
 import { TS2_2Component } from './typescript-2-2/typescript-2-2.component';
+import { FRPSubjectsExercise1Component } from './frp-subjects-exercise1/frp-subjects-exercise1.component';
+import { FRPSubjectsExercise2Component } from './frp-subjects-exercise2/frp-subjects-exercise2.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { TS2_2Component } from './typescript-2-2/typescript-2-2.component';
     FRPObservablesComponent,
     FRPObservablesExerciseComponent,
     FRPSubjectsComponent,
-    FRPSubjectsExerciseComponent
+    FRPSubjectsExercise1Component,
+      FRPSubjectsExercise2Component
   ],
   imports: [
     MaterialModule,
