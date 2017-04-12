@@ -10,19 +10,21 @@
              [class.selected]="selectedTab === i"
              (clicked)="selectTab(i)"></app-tab>
   </div>
+
   <div class="components">
-    <algebraic-data-types1 *ngIf="selectedTab===0"></algebraic-data-types1>
-    <algebraic-data-types2 *ngIf="selectedTab===1"></algebraic-data-types2>
-    <type-guards *ngIf="selectedTab===2"></type-guards>
-    <generics *ngIf="selectedTab===3"></generics>
-    <ts2-2  *ngIf="selectedTab===4"></ts2-2>
-    <fp-1 *ngIf="selectedTab===5"></fp-1>
-    <fp-2 *ngIf="selectedTab===6"></fp-2>
-    <fp-exercise *ngIf="selectedTab===7"></fp-exercise>
-    <frp-observables *ngIf="selectedTab===8"></frp-observables>
-    <frp-observables-exercise *ngIf="selectedTab===9"></frp-observables-exercise>
-    <frp-subjects *ngIf="selectedTab===10"></frp-subjects>
-    <frp-subjects-exercise1 *ngIf="selectedTab===11"></frp-subjects-exercise1>
-    <frp-subjects-exercise2 *ngIf="selectedTab===12"></frp-subjects-exercise2>
+    <ts-basics *ngIf="selectedTab===0"></ts-basics>
+    <algebraic-data-types1 *ngIf="selectedTab===1"></algebraic-data-types1>
+    <algebraic-data-types2 *ngIf="selectedTab===2"></algebraic-data-types2>
+    <type-guards *ngIf="selectedTab===3"></type-guards>
+    <generics *ngIf="selectedTab===4"></generics>
+    <ts2-2 *ngIf="selectedTab===5"></ts2-2>
+    <fp-1 *ngIf="selectedTab===6"></fp-1>
+    <fp-2 *ngIf="selectedTab===7"></fp-2>
+    <fp-exercise *ngIf="selectedTab===8"></fp-exercise>
+    <frp-observables *ngIf="selectedTab===9"></frp-observables>
+    <frp-observables-exercise *ngIf="selectedTab===10"></frp-observables-exercise>
+    <frp-subjects *ngIf="selectedTab===11"></frp-subjects>
+    <frp-subjects-exercise1 *ngIf="selectedTab===12"></frp-subjects-exercise1>
+    <frp-subjects-exercise2 *ngIf="selectedTab===13"></frp-subjects-exercise2>
   </div>
 </div>
