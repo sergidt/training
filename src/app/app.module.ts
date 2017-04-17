@@ -12,7 +12,8 @@ import { AlgebraicDataTypesComponent1 } from './typescript-algebraic-data-types1
 import { AlgebraicDataTypesComponent2 } from './typescript-algebraic-data-types2/algebraic-data-types.component2';
 import { Fp1Component } from './fp-1/fp-1.component';
 import { Fp2Component } from './fp-2/fp-2.component';
-import { FpExerciseComponent } from './fp-exercise/fp-exercise.component';
+import { FpExercise1Component } from './fp-exercise-1/fp-exercise-1.component';
+import { FpExercise2Component } from './fp-exercise-2/fp-exercise-2.component';
 import { FRPObservablesComponent } from './frp-observables/frp-observables.component';
 import { FRPObservablesExerciseComponent } from './frp-observables-exercise/frp-observables-exercise.component';
 import { FRPSubjectsComponent } from './frp-subjects/frp-subjects.component';
@@ -33,7 +34,8 @@ import { TSBasicsComponent } from './typescript-basics/typescript-basics.compone
     Fp1Component,
     Fp2Component,
     TSBasicsComponent,
-    FpExerciseComponent,
+    FpExercise1Component,
+    FpExercise2Component,
     FRPObservablesComponent,
     FRPObservablesExerciseComponent,
     FRPSubjectsComponent,
