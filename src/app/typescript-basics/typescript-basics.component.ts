@@ -1,13 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector:    'ts-basics',
-  template: `<div [innerHtml]="htmlContent"></div>`
+    selector:    'ts-basics',
+    template: `<div [innerHtml]="htmlContent"></div>`
 })
 export class TSBasicsComponent implements OnInit {
 
-  htmlContent = `<pre><code>
+    htmlContent = `<pre><code>
 //Variable types 
+var
+let
+
+const name = "sergi";
+ 
 
 //Type Assertions
 
@@ -16,11 +21,15 @@ export class TSBasicsComponent implements OnInit {
 //Flat arrows
 
 //Types 
-boolean, number, string, Array, Tuple, Enum, any, void, null, undefined, never
+boolean, number, string, Array, null, undefined, Tuple, Enum, any, void, never
+
 //Advanced Types
 Map
 
 //Custom types
+
+//High order functions 
+map, filter, sort, some, every, find, reduce
 
 //Interface
 
@@ -39,8 +48,27 @@ The descriptor: The Property Descriptor for the member, this is a property descr
 </code>
 </pre>`;
 
-  ngOnInit() {
-    console.clear();
+    ngOnInit() {
+        console.clear();
+    }
 
-  }
+    @timeout(5000)
+    print() {
+        console.log("sergi");
+    }
+
 }
+
+function timeout(ms: number = 0) {
+    return (target, key, descriptor) => {
+        var originalFunc = descriptor.value;
+
+        descriptor.value = function(...args) {
+            setTimeout(() => {
+                originalFunc.apply(this, args);
+            }, ms);
+        };
+        return descriptor;
+    }
+}
+

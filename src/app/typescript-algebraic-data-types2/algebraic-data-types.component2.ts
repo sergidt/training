@@ -13,5 +13,31 @@ export class AlgebraicDataTypesComponent2 implements OnInit {
 
   ngOnInit() {
     console.clear();
+
+    let p1 = {
+      plug: function(){
+        console.log("p1 plugged");
+      },
+
+
+      update: function(){
+
+      }
+    };
+
+    let aa : UpdatablePlugin = p1;
+
+    console.log(aa.plug());
   }
 }
+
+interface Plugable {
+  plug: () => void;
+}
+
+interface Updatable {
+  update: () => void;
+}
+
+type UpdatablePlugin = Plugable & Updatable;
+
