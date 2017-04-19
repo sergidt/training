@@ -37,16 +37,17 @@ let interval$ = Observable.interval(1000)
   ngOnInit() {
     console.clear();
 
-    let interval$ = Observable.interval(1000)
-        .share();
+    let interval$ = Observable.interval(1000).share();
 
     interval$
       .subscribe(x => console.log(`consumer 1: ${x}`));
 
-    setTimeout(() => {
+
+  setTimeout(() => {
       interval$
         .subscribe(x => console.log(`consumer 2: ${x}`));
-    }, 3000);
+    }, 4000);
+
   }
 
 }

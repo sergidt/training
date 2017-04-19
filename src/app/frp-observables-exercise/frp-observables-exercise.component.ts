@@ -11,12 +11,12 @@ import { Observable } from 'rxjs/Observable';
     <br>
     <br>
     <hr>
-    Extra points: 
-    We can improve this code: 
+    Extra points:
+    We can improve this code:
     <br>
     - Insert a threshold time because we don't want do the request every char you type.
     <br>
-    - We only wnat to do the request if the input text is not empty.
+    - We only want to do the request if the input text is not empty.
     <br>
   </div>
   <br>
@@ -26,11 +26,11 @@ import { Observable } from 'rxjs/Observable';
   Results:
   <div #results></div>`,
   styles: [`
-    input {
-    margin-bottom: 30px;
-  }
-  
-     
+      input {
+          margin-bottom: 30px;
+      }
+
+
   `]
 })
 export class FRPObservablesExerciseComponent implements AfterViewInit {
@@ -39,7 +39,23 @@ export class FRPObservablesExerciseComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     console.clear();
+
+    let mouseclick$ = Observable.fromEvent(document, 'keyup');
+
+    let mousemove$ = Observable.fromEvent(document, 'mousemove')
+                               .takeUntil(mouseclick$)
+        .subscribe(console.log);
+
+    /*
+
+    Observable.fromEvent(this.input.nativeElement, 'keyup')
+              .debounceTime(300)
+              .map((e: KeyboardEvent) => e.target['value']) // text casella
+              .distinctUntilChanged()
+              .filter(text => text.length > 3)
+              .switchMap((text: string) => this.simulatedRequest(text))
+              .subscribe(_ => this.results.nativeElement.innerText = _);*/
   }
 
-  simulatedRequest = (term: string) => Observable.timer(2000).map(_ => `Search result from -> ${term} request`);
+  simulatedRequest = (term: string) => Observable.timer(1).map(_ => `Search result from -> ${term} request`);
 }
