@@ -37,17 +37,32 @@ let interval$ = Observable.interval(1000)
   ngOnInit() {
     console.clear();
 
-    let interval$ = Observable.interval(1000).share();
+    /* let interval$ = Observable.interval(1000).share();
 
-    interval$
-      .subscribe(x => console.log(`consumer 1: ${x}`));
+     interval$
+     .subscribe(x => console.log(`consumer 1: ${x}`));
 
 
-  setTimeout(() => {
-      interval$
-        .subscribe(x => console.log(`consumer 2: ${x}`));
-    }, 4000);
+     setTimeout(() => {
+     interval$
+     .subscribe(x => console.log(`consumer 2: ${x}`));
+     }, 4000);
+     */
 
+    const mouseDown$ = Observable.fromEvent(document, 'mousedown');
+    const mouseUp$ = Observable.fromEvent(document, 'mouseup');
+    const mouseMove$ = Observable.fromEvent(document, 'mousemove');
+
+
+    const drag$ = mouseDown$
+                      .switchMap(_ => mouseMove$
+                                        .takeUntil(mouseUp$));
+
+   // drag$.subscribe(printMousePosition);
   }
 
+}
+
+function printMousePosition(event: MouseEvent) {
+  console.log(`Mouse postion: [${event.x}, ${event.y}]`);
 }
